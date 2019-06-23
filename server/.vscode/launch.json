@@ -5,12 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "launch flask",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/api.py",
-            "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal"
+            "name":"Python: Current File",
+            "type":"python",
+            "request":"launch",
+            "program":"${workspaceFolder}/api.py",
+            "console":"integratedTerminal"
         }
     ]
 }
