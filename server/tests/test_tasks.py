@@ -1,29 +1,29 @@
 from typing import List
 import unittest
-from model import todo
+from model import tasks
 
 
 class TestTasks(unittest.TestCase):
     def test_serialize_task(self):
-        task = todo.Task(100, "task1", True)
+        task = tasks.Task(100, "task1", True)
 
-        j = todo.serialize_task(task)
+        j = tasks.serialize_task(task)
         self.assertGreater(len(j), 0)
 
-        result = todo.deserialize_task(j)
+        result = tasks.deserialize_task(j)
         self.assertEqual(task.id, result.id)
         self.assertEqual(task.text, result.text)
         self.assertEqual(task.done, result.done)
 
     def test_serialize_tasks(self):
-        task1 = todo.Task(0, "task1", False)
-        task2 = todo.Task(100, "task2", True)
-        tasks: List[todo.Task] = [task1, task2]
+        task1 = tasks.Task(0, "task1", False)
+        task2 = tasks.Task(100, "task2", True)
+        task_list: List[tasks.Task] = [task1, task2]
 
-        j = todo.serialize_tasks(tasks)
+        j = tasks.serialize_tasks(task_list)
         self.assertGreater(len(j), 0)
 
-        result = todo.deserialize_tasks(j)
+        result = tasks.deserialize_tasks(j)
         self.assertEqual(len(result), 2)
         self.assertEqual(task1.id, result[0].id)
         self.assertEqual(task1.text, result[0].text)
