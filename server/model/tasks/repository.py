@@ -9,7 +9,7 @@ class Repository:
     def list(self) -> List[Task]:
         return list(filter(lambda t: not t.done, self._tasks))
 
-    def add(self, task: Task)->int:
+    def add(self, task: Task) -> int:
         task.id = len(self._tasks) + 1
         self._tasks.append(task)
         return task.id

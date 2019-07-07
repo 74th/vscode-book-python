@@ -4,14 +4,13 @@ from model import tasks
 
 
 class TestRepository(unittest.TestCase):
-
     def test_list(self):
         rep = tasks.Repository()
 
         l = rep.list()
         self.assertEqual(len(l), 2)
         self.assertEqual(l[0].id, 1)
-        self.assertEqual(l[0].text,"task1")
+        self.assertEqual(l[0].text, "task1")
         self.assertEqual(l[0].done, False)
         self.assertEqual(l[1].id, 2)
 
