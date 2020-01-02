@@ -2,7 +2,7 @@
 	"name": "Python 3.7",
 	"context": "..",
 	"dockerFile": "Dockerfile",
-	"appPort": [5000],
+	"appPort": [8080],
 	"extensions": [
 		"ms-python.python"
 	]
