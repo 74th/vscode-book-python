@@ -6,4 +6,4 @@ COPY model ./
 COPY static ./
 COPY api.py ./
 
-EXPOSE 5000
+EXPOSE 8080
