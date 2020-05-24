@@ -14,3 +14,6 @@ df.hist(by="Name", column="SepalLength", sharex=True, sharey=True)
 
 #%%
 sns.pairplot(df, hue='Name')
+
+
+# %%
