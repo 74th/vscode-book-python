@@ -1,8 +1,16 @@
-FROM python:3.7
+FROM python:3.8
 RUN apt-get update && apt-get -y install git procps
+RUN pip install poetry==1.0.5
 
 WORKDIR /app
-ADD ./requirements.txt ./
-RUN pip install -r requirements.txt
-ADD ./dev-requirements.txt ./
-RUN pip install -r dev-requirements.txt
+
+COPY poetry.lock pyproject.toml ./
+RUN poetry install
+
+COPY model ./model
+COPY static ./static
+COPY api.py ./
+
+EXPOSE 8080
+
+CMD ["poetry", "run", "python", "./api.py"]
