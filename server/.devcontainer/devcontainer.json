@@ -5,5 +5,8 @@
 	"appPort": [8080],
 	"extensions": [
 		"ms-python.python"
+	],
+	"mounts": [
+		"/home/nnyn/.vscode-server:/root/.vscode-server"
 	]
 }
