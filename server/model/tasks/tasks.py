@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict, Any
 import json
 
 
@@ -21,6 +21,6 @@ def serialize_task(task: Task) -> str:
     return json.dumps(task.__dict__)
 
 
-def deserialize_task(j: str) -> Task:
-    d: dict = json.loads(j)
+def deserialize_task(j: bytes) -> Task:
+    d: Dict[str, Any] = json.loads(j)
     return Task(**d)
